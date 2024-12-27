@@ -1,4 +1,3 @@
-// Fungsi untuk mengambil soal dan jawaban dari API
 async function fetchQuizizzQuestions(pin) {
   const url = `https://api.quizit.online/quizizz/answers?pin=${pin}`;
   try {
@@ -27,7 +26,6 @@ async function fetchQuizizzQuestions(pin) {
   }
 }
 
-// Fungsi untuk menampilkan data di halaman web
 async function displayQuestions(pin) {
   const container = document.getElementById("questions-container");
   const errorMessage = document.getElementById("error-message");
@@ -57,15 +55,14 @@ async function displayQuestions(pin) {
       container.appendChild(questionCard);
     });
 
-    container.style.display = "flex"; // Tampilkan kontainer soal
-    errorMessage.textContent = ""; // Hapus pesan error
+    container.style.display = "flex";
+    errorMessage.textContent = "";
   } catch (error) {
-    errorMessage.textContent = error.message; // Tampilkan pesan error
-    container.style.display = "none"; // Sembunyikan kontainer soal
+    errorMessage.textContent = error.message;
+    container.style.display = "none";
   }
 }
 
-// Event Listener untuk tombol "Tampilkan Soal"
 document.getElementById("fetch-button").addEventListener("click", () => {
   const pinInput = document.getElementById("quiz-pin").value.trim();
   const errorMessage = document.getElementById("error-message");
@@ -80,13 +77,12 @@ document.getElementById("fetch-button").addEventListener("click", () => {
     return;
   }
 
-  errorMessage.textContent = ""; // Hapus pesan error
-  displayQuestions(pinInput); // Panggil fungsi untuk menampilkan soal
+  errorMessage.textContent = "";
+  displayQuestions(pinInput);
 });
 
-// Event Listener untuk tombol Enter
 document.getElementById("quiz-pin").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    document.getElementById("fetch-button").click(); // Memicu klik tombol ketika Enter ditekan
+    document.getElementById("fetch-button").click();
   }
 });
