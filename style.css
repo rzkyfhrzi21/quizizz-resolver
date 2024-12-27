@@ -1,0 +1,42 @@
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.question-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 15px;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.question-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.answer-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.answer-list li {
+  padding: 5px 0;
+}
+
+.category-badge {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+#input-section input {
+  text-align: center;
+  font-size: 1.2rem;
+}
